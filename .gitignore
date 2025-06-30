@@ -1,0 +1,4 @@
+.env
+testing_folder/
+__pycache__/
+.pytest_cache/

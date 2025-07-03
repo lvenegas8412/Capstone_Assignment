@@ -1,37 +1,47 @@
 import tkinter as tk
+from tkinter import ttk, messagebox
+from datetime import datetime, timedelta
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+from matplotlib.figure import Figure
 
-window = tk.Tk()
 
-# Configure the window
-window.title("Capstone Project")  # Set the window title
-window.geometry("2000x1000")  # Set the window size (width x height)
-window.resizable(True, True)  # Allow the window to be resized
-window.attributes('-topmost', True)
 
-#label
-welcome_label = tk.Label(
-    window,  # The parent window
-    window.configure(bg="black"), #default dark theme
-    text="Welcome to my app!",  # The text to display
-    font=("Arial", 24),  # Font family and size
-    fg="white",  # Text color
-    bg="black"
-)
+#Creating GUI Window
+root = tk.Tk()
+root.geometry('1200x800')
+root.title('Capstone Project - Weather Dashboard')
+root.attributes('-topmost', True)
+root.configure(bg='white')
+root.grid_columnconfigure(0, weight=1)
 
-# Display the label in the window
-welcome_label.pack(pady=50) 
+#Title Window
+title_label = tk.Label(
+    root,
+    text = 'Lets Find Some Weather!',
+    font = ('Courier', 24),
+    bg = 'white',
+    fg = 'black')
+title_label.grid(row=0, column=0, sticky='we', pady=10 )
 
-# Create a button that closes the application
-exit_button = tk.Button(
-    window,
-    text="Exit Application",
-    bg="black",
-    fg="white",
-    font=("Arial", 18),  # Font family and size
-    command=window.destroy  # This function will be called when the button is clicked
-)
+#Input Frame
+input_frame = ttk.LabelFrame(root, text='Input', padding=10)
+input_frame.grid(row=1, column=0, sticky='we', pady=10, padx=10)
+#Input Label
+input_label = tk.Label(input_frame, text='Enter your City here:')
+input_label.grid(row=0, column=0)
+#Input_Data
+entry = tk.Entry(input_frame)
+entry.grid(row=0 , column=1)
 
-exit_button.pack(pady=20)
 
-window.mainloop()
+# style = ttk.Style()
+# style.configure('Custom.TLabelframe', background='gray')
+# style.configure('Custom.TLabelframe.Label', background='gray')  # For the label text bg
 
+# input_frame = ttk.LabelFrame(root, text='INPUT', padding=10, style='Custom.TLabelframe')
+
+
+
+
+root.mainloop()

@@ -25,15 +25,48 @@ title_label = tk.Label(
 title_label.grid(row=0, column=0, sticky='we', pady=10 )
 
 #Input_Frame
-input_frame = ttk.LabelFrame(root, text='Input', padding=10)
-input_frame.grid(row=1, column=0, sticky='we', pady=10, padx=10)
+input_frame = ttk.LabelFrame(
+    root,
+    text='Input',
+    padding=10)
+input_frame.grid(
+    row=1, 
+    column=0, 
+    sticky='w', 
+    pady=10, 
+    padx=10)
+
 #Input_Label
-input_label = ttk.Label(input_frame, text='Enter your City here:')
-input_label.grid(row=0, column=0)
+input_label = ttk.Label(
+    input_frame, 
+    text='Enter your City here:')
+input_label.grid(
+    row=0, 
+    column=0, sticky='w')
+
 #Input_Entry
-entry = ttk.Entry(input_frame)
+entry_var = tk.StringVar(value='--')
+entry = ttk.Entry(input_frame, textvariable=entry_var)
 entry.grid(row=0 , column=1)
 
+
+#Drop_Box
+drop_box = ttk.Combobox(
+    input_frame,
+    values=['--','Last 7 days', 'Last 14 Days', 'Last 30 days']
+)
+
+drop_box.current(0) #default
+drop_box.grid(row=1, column=1, sticky='w', pady=5, padx=5)
+
+#Drop_Box_Label
+drop_box_label = ttk.Label(
+    input_frame,
+    text='Time Range:').grid(
+    row=1, column=0,
+    sticky = 'w',
+    pady=5
+      )
 
 # style = ttk.Style()
 # style.configure('Custom.TLabelframe', background='gray')

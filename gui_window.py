@@ -28,10 +28,10 @@ title_label.grid(row=0, column=0, sticky='we', pady=10 )
 input_frame = ttk.LabelFrame(root, text='Input', padding=10)
 input_frame.grid(row=1, column=0, sticky='we', pady=10, padx=10)
 #Input Label
-input_label = tk.Label(input_frame, text='Enter your City here:')
+input_label = ttk.Label(input_frame, text='Enter your City here:')
 input_label.grid(row=0, column=0)
 #Input_Data
-entry = tk.Entry(input_frame)
+entry = ttk.Entry(input_frame)
 entry.grid(row=0 , column=1)
 
 

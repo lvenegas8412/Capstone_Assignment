@@ -11,7 +11,7 @@ weather_api_url = "https://api.openweathermap.org/data/2.5/weather"
 
 # Parameters for our request
 parameters = {
-    "q": "New York,US",         # The city we want weather for
+    "q": "Oxnard,US",         # The city we want weather for
     "appid": {api_key},           # API key
     "units": "imperial"           # Get temperature 
     }

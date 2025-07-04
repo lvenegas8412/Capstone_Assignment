@@ -72,7 +72,7 @@ drop_box.grid(row=1,
               sticky='w', 
               pady=5, padx=5)
 
-#DROP_BX_LABEL
+#DROP_BOX_LABEL
 drop_box_label = ttk.Label(
     input_frame,
     text='Time Range:').grid(

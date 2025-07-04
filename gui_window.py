@@ -117,7 +117,7 @@ cond_label.grid(row=2,column=0,
     sticky='w', 
     pady=5)
 
-#BUTTONS
+#BUTTONS - 3 buttons - update, clear, and to change between dark and light theme
 button_frame = tk.Frame(root, padx=10)
 button_frame.grid(row=1, column=1,
                   sticky = 'nwes',
@@ -134,7 +134,7 @@ clear_button.grid(row=1, column=0, sticky='we', pady=10, padx=10)
 theme_button = tk.Button(button_frame, text='Change Theme: (Dark/Light)', bg='light gray')
 theme_button.grid(row=2, column=0, sticky='we', pady=10, padx=10)
 
-#VISUALIZATION
+#VISUALIZATION - made an empty plot
 viz_frame = ttk.LabelFrame(root, text='Wheather History Tracker')
 viz_frame.grid(row=2, column=0, sticky='nwes', padx=10, pady=10)
 

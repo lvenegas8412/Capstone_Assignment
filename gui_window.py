@@ -40,8 +40,6 @@ input_frame.grid(
     padx=10
     )
 
-
-
 #Input_Label
 input_label = ttk.Label(
     input_frame, 
@@ -101,6 +99,20 @@ temp_label = tk.Label(
 temp_label.grid(row=0, column=0, 
                 sticky='w', 
                 pady=5)
+
+precip_label = tk.Label(
+    weather_frame,
+    text='Precipitation: --')
+precip_label.grid(row=1, column=0, 
+    sticky='w', 
+    pady=5)
+
+cond_label = tk.Label(
+    weather_frame,
+    text='Conditions: --')
+cond_label.grid(row=2, column=0, 
+    sticky='w', 
+    pady=5)
 
 
 

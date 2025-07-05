@@ -2,6 +2,7 @@
 from  gui_window import entry, temp_label, cond_label, precip_label
 import requests
 from config import weather_api_url, api_key
+import tkinter as tk
 
 
 def get_data():
@@ -18,5 +19,12 @@ def get_data():
             cond_label.config(text="Conditions: " + description) #CHANGED DESCRIP TO CONDITIONS, MORE READER FRIENDLY
             precip_label.config(text="Precipitation: " + str(precipitation) + "%") #ADDED % FOR READABILITY
             with open("data.txt", "a") as f: #CHANGED TO OPEN W/ "A" TO RECORD ALL ENRIES
-                f.write(city_name + "," + str(temp) + "," + description + "," + str(humidity) + '\n')   
+                f.write(city_name + "," + str(temp) + "," + description + "," + str(precipitation) + '\n')   
         except:
+            entry.delete(0, tk.END)
+            entry.city_input.insert(tk.END,'PLEASE ENTER A VALID CITY')
+            entry.city_input.config(fg='red')                 
+            print(ValueError ("City does not exist"))  #DID EXCEPT WITH VALUE ERROR IN CASE INPUT IS NOT VALID
+    else:
+
+        print("No city")

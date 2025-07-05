@@ -1,6 +1,8 @@
 #Weather History Tracker
-from  gui_window import entry
+from  gui_window import entry, temp_label, cond_label, precip_label
 import requests
+from config import weather_api_url, api_key
+
 
 def get_data():
     city_name = entry

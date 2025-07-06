@@ -10,6 +10,7 @@ from features.history_tracker import get_data
 
 
 
+
 #Creating GUI Window
 root = tk.Tk()
 root.geometry('1200x800')
@@ -98,7 +99,7 @@ weather_frame.grid(
     padx=10)
 
 
-#CURRENT_WEATHER_LABELS
+#DEFAULT_WEATHER_LABELS
 temp_label = tk.Label(
     weather_frame,
     text='Temperature: --', bg='light grey')
@@ -106,10 +107,10 @@ temp_label.grid(row=0,column=0,
                 sticky='w', 
                 pady=5)
 
-precip_label = tk.Label(
+wind_label = tk.Label(
     weather_frame,
     text='Wind Speed: --', bg='light grey')
-precip_label.grid(row=1, column=0,
+wind_label.grid(row=1, column=0,
     sticky='w', 
     pady=5)
 
@@ -130,10 +131,18 @@ button_frame.grid(row=1, column=1,
                   padx=10) 
 button_frame.grid_columnconfigure(0,weight=1)
 
-update_button = tk.Button(button_frame, text='Update', bg='light gray', command=lambda: get_data(entry, temp_label, cond_label, precip_label))
+update_button = tk.Button(button_frame, text='Update', bg='light gray', command=lambda: get_data(entry, temp_label, cond_label, wind_label))
 update_button.grid(row=0, column=0, columnspan=2,sticky='we', pady=10, padx=10)
 
-clear_button = tk.Button(button_frame, text='Clear', bg='light gray')
+
+def refresh():
+    drop_box.current(0)
+    entry.delete(0, tk.END)
+    temp_label.configure(text='Temperature: --')
+    wind_label.configure(text='Wind Speed: --')
+    cond_label.configure(text='Conditions: --')
+
+clear_button = tk.Button(button_frame, text='Clear', bg='light gray', command=refresh)
 clear_button.grid(row=1, column=0, sticky='we', pady=10, padx=10)
 
 theme_button = tk.Button(button_frame, text='Change Theme: (Dark/Light)', bg='light gray')

@@ -4,6 +4,7 @@ import os
 from datetime import datetime
 from dotenv import load_dotenv
 
+
 load_dotenv()
 api_key = os.getenv('my_api')
 
@@ -27,3 +28,5 @@ if response.status_code == 200:
 else:
     print(f"Error: {response.status_code}")
     print(response.text)
+
+

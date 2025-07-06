@@ -1,30 +1,42 @@
-#Weather History Tracker
-from  gui_window import entry, temp_label, cond_label, precip_label
+#WEATHER HISTORY TRACKER
+
+
 import requests
 from config import weather_api_url, api_key
 import tkinter as tk
+import os
 
 
-def get_data():
-    city_name = entry
+def get_data(entry, temp_label, cond_label, precip_label):
+    city_name = entry.get()
     if city_name != '':
         try:
+
+            #Call OpenWeather for data
             url = weather_api_url + '?q=' + city_name + '&appid=' + api_key + '&units=imperial'
             data = requests.get(url)
-            info = data.json
+            info = data.json()
+            if data.status_code !=200:
+                raise ValueError("Invalid city")
+            
+            #ID info I want to bring from OpenWeather
             temp= info['main']['temp']
             description = info['weather'][0]['description']
-            precipitation = info['main']['precipitation']
-            temp_label.config(text="Temperature: " + str(temp)+ ' °F') #ADDED °F FOR READABILITY
-            cond_label.config(text="Conditions: " + description) #CHANGED DESCRIP TO CONDITIONS, MORE READER FRIENDLY
-            precip_label.config(text="Precipitation: " + str(precipitation) + "%") #ADDED % FOR READABILITY
-            with open("data.txt", "a") as f: #CHANGED TO OPEN W/ "A" TO RECORD ALL ENRIES
-                f.write(city_name + "," + str(temp) + "," + description + "," + str(precipitation) + '\n')   
-        except:
-            entry.delete(0, tk.END)
-            entry.city_input.insert(tk.END,'PLEASE ENTER A VALID CITY')
-            entry.city_input.config(fg='red')                 
-            print(ValueError ("City does not exist"))  #DID EXCEPT WITH VALUE ERROR IN CASE INPUT IS NOT VALID
-    else:
+            wind_speed = info['wind']['speed']
 
+            #Reset the Weather Labels with updated information
+            temp_label.config(text="Temperature: " + str(temp)+ ' °F') 
+            cond_label.config(text="Conditions: " + description)
+            precip_label.config(text="Wind Spped: " + str(wind_speed) + 'mph')
+            with open("data.txt", "w") as f: #CHANGED TO OPEN W/ "A" TO RECORD ALL ENRIES
+                f.write(city_name + "," + str(temp) + "," + description + "," + str(wind_speed) + '\n')   
+
+        except Exception as e:
+            entry.delete(0, tk.END)
+            entry.insert(tk.END,'ENTER A VALID CITY')
+            entry.config(foreground='red')                 
+            entry.config(foreground='black')
+            print("Error:", e) 
+    else:
         print("No city")
+

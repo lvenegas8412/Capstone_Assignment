@@ -4,6 +4,9 @@ from datetime import datetime, timedelta
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
+from features.history_tracker import get_data
+import requests
+
 
 
 
@@ -105,7 +108,7 @@ temp_label.grid(row=0,column=0,
 
 precip_label = tk.Label(
     weather_frame,
-    text='Precipitation: --', bg='light grey')
+    text='Wind Speed: --', bg='light grey')
 precip_label.grid(row=1, column=0,
     sticky='w', 
     pady=5)
@@ -117,6 +120,8 @@ cond_label.grid(row=2,column=0,
     sticky='w', 
     pady=5)
 
+
+        
 #BUTTONS - 3 buttons - update, clear, and to change between dark and light theme
 button_frame = tk.Frame(root, padx=10)
 button_frame.grid(row=1, column=1,
@@ -125,7 +130,7 @@ button_frame.grid(row=1, column=1,
                   padx=10) 
 button_frame.grid_columnconfigure(0,weight=1)
 
-update_button = tk.Button(button_frame, text='Update', bg='light gray')
+update_button = tk.Button(button_frame, text='Update', bg='light gray', command=lambda: get_data(entry, temp_label, cond_label, precip_label))
 update_button.grid(row=0, column=0, columnspan=2,sticky='we', pady=10, padx=10)
 
 clear_button = tk.Button(button_frame, text='Clear', bg='light gray')

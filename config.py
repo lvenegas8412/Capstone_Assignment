@@ -18,21 +18,12 @@ parameters = {
 
 # Make the request
 response = requests.get(weather_api_url, params=parameters)
-print(response.json())
+# print(response.json())
 
-# Check if request was successful
+# Check if request was successful and get data
 if response.status_code == 200:
-    # Parse the JSON response
     weather_data = response.json()
-    
-    # Extract and display some data
-    city = weather_data["name"]
-    temperature = weather_data["main"]["temp"]
-    weather = weather_data["weather"][0]["description"]
-    
-    print(f"Current weather in {city}:")
-    print(f"Temperature: {temperature}°F")
-    print(f"Conditions: {weather}")
+
 else:
     print(f"Error: {response.status_code}")
     print(response.text)

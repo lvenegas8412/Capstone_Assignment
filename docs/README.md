@@ -1,1 +1,8 @@
-This is just my first draft
+# Capstone Assignment - Weather Dashboard
+
+
+## Overview
+
+## Learninig Objectives
+
+## Assignmet Tasks

@@ -27,8 +27,8 @@ def get_data(entry, temp_label, cond_label, precip_label):
             #Reset the Weather Labels with updated information
             temp_label.config(text="Temperature: " + str(temp)+ ' °F') 
             cond_label.config(text="Conditions: " + description)
-            precip_label.config(text="Wind Spped: " + str(wind_speed) + 'mph')
-            with open("data.txt", "w") as f: #CHANGED TO OPEN W/ "A" TO RECORD ALL ENRIES
+            precip_label.config(text="Wind Speed" + str(wind_speed) + 'mph')
+            with open("data.txt", "a") as f: #CHANGED TO OPEN W/ "A" TO RECORD ALL ENRIES
                 f.write(city_name + "," + str(temp) + "," + description + "," + str(wind_speed) + '\n')   
 
         except Exception as e:

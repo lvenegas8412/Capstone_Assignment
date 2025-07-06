@@ -9,6 +9,7 @@ import os
 
 def get_data(entry, temp_label, cond_label, precip_label):
     city_name = entry.get()
+    
     if city_name != '':
         try:
 
@@ -27,7 +28,7 @@ def get_data(entry, temp_label, cond_label, precip_label):
             #Reset the Weather Labels with updated information
             temp_label.config(text="Temperature: " + str(temp)+ ' °F') 
             cond_label.config(text="Conditions: " + description)
-            precip_label.config(text="Wind Speed" + str(wind_speed) + 'mph')
+            precip_label.config(text="Wind Speed: " + str(round(wind_speed)) + 'mph')
             with open("data.txt", "a") as f: #CHANGED TO OPEN W/ "A" TO RECORD ALL ENRIES
                 f.write(city_name + "," + str(temp) + "," + description + "," + str(wind_speed) + '\n')   
 

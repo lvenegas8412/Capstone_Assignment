@@ -7,7 +7,7 @@ import tkinter as tk
 import os
 
 
-def get_data(entry, temp_label, cond_label, precip_label):
+def get_data(entry, temp_label, cond_label, precip_label, max_temp_label, rain_label, snow_label):
     city_name = entry.get()
     
     if city_name != '':
@@ -24,11 +24,18 @@ def get_data(entry, temp_label, cond_label, precip_label):
             temp= info['main']['temp']
             description = info['weather'][0]['description']
             wind_speed = info['wind']['speed']
+            max_temp =
+            rain = 
+            snow =
+
 
             #Reset the Weather Labels with updated information
             temp_label.config(text="Temperature: " + str(temp)+ ' °F') 
             cond_label.config(text="Conditions: " + description)
             precip_label.config(text="Wind Speed: " + str(round(wind_speed)) + 'mph')
+            max_temp_label.
+            rain_label
+            snow_label
             with open("data.txt", "a") as f: #CHANGED TO OPEN W/ "A" TO RECORD ALL ENRIES
                 f.write(city_name + "," + str(temp) + "," + description + "," + str(wind_speed) + '\n')   
 

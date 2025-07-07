@@ -102,7 +102,7 @@ weather_frame.grid(
 #DEFAULT_WEATHER_LABELS
 temp_label = tk.Label(
     weather_frame,
-    text='Temperature: --', bg='light grey')
+    text='Current Temperature: --', bg='light grey')
 temp_label.grid(row=0,column=0,
                 sticky='w', 
                 pady=5)
@@ -118,6 +118,27 @@ cond_label = tk.Label(
     weather_frame,
     text='Conditions: --', bg='light grey')
 cond_label.grid(row=2,column=0, 
+    sticky='w', 
+    pady=5)
+
+max_temp_label = tk.Label(
+    weather_frame,
+    text='Max Temp: --', bg='light grey')
+max_temp_label.grid(row=3,column=0, 
+    sticky='w', 
+    pady=5)
+
+rain_label = tk.Label(
+    weather_frame,
+    text='Rain: --', bg='light grey')
+rain_label.grid(row=4,column=0, 
+    sticky='w', 
+    pady=5)
+
+snow_label = tk.Label(
+    weather_frame,
+    text='Snow: --', bg='light grey')
+snow_label.grid(row=5,column=0, 
     sticky='w', 
     pady=5)
 
@@ -138,10 +159,13 @@ update_button.grid(row=0, column=0, columnspan=2,sticky='we', pady=10, padx=10)
 def refresh():
     drop_box.current(0)
     entry.delete(0, tk.END)
-    temp_label.configure(text='Temperature: --')
+    temp_label.configure(text='Current Temperature: --')
     wind_label.configure(text='Wind Speed: --')
     cond_label.configure(text='Conditions: --')
-
+    max_temp_label.configure(text='Max Temp: --')
+    rain_label.configure(text='Rain: --')
+    snow_label.configure(text='Snow: --')
+    
 clear_button = tk.Button(button_frame, text='Clear', bg='light gray', command=refresh)
 clear_button.grid(row=1, column=0, sticky='we', pady=10, padx=10)
 

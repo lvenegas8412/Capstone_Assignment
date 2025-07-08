@@ -16,7 +16,8 @@ root = tk.Tk()
 root.geometry('1200x800')
 root.title('Capstone Project - Weather Dashboard')
 root.attributes('-topmost', True)
-# root.after(100, lambda: root.attributes('-topmost', False)) 
+root.after(1000, lambda: root.attributes('-topmost', False))
+
 root.configure(bg='white')
 
 root.grid_columnconfigure(1, weight=1) 

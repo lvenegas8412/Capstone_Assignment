@@ -37,9 +37,9 @@ def get_data(entry, temp_label, cond_label, precip_label, max_temp_label, rain_l
             temp_label.config(text="Current Temperature: " + str(temp)+ ' °F') 
             cond_label.config(text="Conditions: " + description)
             precip_label.config(text="Wind Speed: " + str(round(wind_speed)) + 'mph')
-            max_temp_label.config(text='Max Temo: ' + str(max_temp)+ ' °F')
-            rain_label.config(text='Rain: ' + str(round(rain_in)) + ' in/hr')
-            snow_label.config(text='Snow: ' + str(round(snow_in)) + ' in/hr')
+            max_temp_label.config(text='Max Temp: ' + str(max_temp)+ ' °F')
+            rain_label.config(text=f"Rain: {rain_in:.2f} in/hr")
+            snow_label.config(text=f"Snow: {snow_in:.2f} in/hr")
             with open("data.txt", "a") as f: #CHANGED TO OPEN W/ "A" TO RECORD ALL ENRIES
                 f.write(city_name + "," + str(temp) + "," + description + "," + str(wind_speed) + '\n')   
 

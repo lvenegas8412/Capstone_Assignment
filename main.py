@@ -16,7 +16,7 @@ root = tk.Tk()
 root.geometry('1200x800')
 root.title('Capstone Project - Weather Dashboard')
 root.attributes('-topmost', True)
-root.after(100, lambda: root.attributes('-topmost', False)) 
+# root.after(100, lambda: root.attributes('-topmost', False)) 
 root.configure(bg='white')
 
 root.grid_columnconfigure(1, weight=1) 
@@ -88,7 +88,7 @@ drop_box_label = ttk.Label(
 #CURRENT_WEATHER_FRAME
 weather_frame = tk.LabelFrame(
     root,
-    text='Current Weather Conditions',
+    text='CURRENT WEATHER STATS',
     padx=10,
     bg='light gray')
 weather_frame.grid(
@@ -152,7 +152,7 @@ button_frame.grid(row=1, column=1,
                   padx=10) 
 button_frame.grid_columnconfigure(0,weight=1)
 
-update_button = tk.Button(button_frame, text='Update', bg='light gray', command=lambda: get_data(entry, temp_label, cond_label, wind_label))
+update_button = tk.Button(button_frame, text='Update', bg='light gray', command=lambda: get_data(entry, temp_label, cond_label, wind_label, max_temp_label, rain_label, snow_label))
 update_button.grid(row=0, column=0, columnspan=2,sticky='we', pady=10, padx=10)
 
 

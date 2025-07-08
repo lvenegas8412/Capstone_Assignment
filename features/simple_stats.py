@@ -24,18 +24,22 @@ def get_data(entry, temp_label, cond_label, precip_label, max_temp_label, rain_l
             temp= info['main']['temp']
             description = info['weather'][0]['description']
             wind_speed = info['wind']['speed']
-            max_temp =
-            rain = 
-            snow =
+            max_temp = info['main']['temp_max']
+            # rain = info['rain']['1h']
+            # snow = info['snow']['1h']
+            rain = info.get('rain', {}).get('1h', 0.0)
+            rain_in = rain / 25.4
+            snow = info.get('snow', {}).get('1h', 0.0)
+            snow_in = snow / 25.4
 
 
             #Reset the Weather Labels with updated information
-            temp_label.config(text="Temperature: " + str(temp)+ ' °F') 
+            temp_label.config(text="Current Temperature: " + str(temp)+ ' °F') 
             cond_label.config(text="Conditions: " + description)
             precip_label.config(text="Wind Speed: " + str(round(wind_speed)) + 'mph')
-            max_temp_label.
-            rain_label
-            snow_label
+            max_temp_label.config(text='Max Temo: ' + str(max_temp)+ ' °F')
+            rain_label.config(text='Rain: ' + str(round(rain_in)) + ' in/hr')
+            snow_label.config(text='Snow: ' + str(round(snow_in)) + ' in/hr')
             with open("data.txt", "a") as f: #CHANGED TO OPEN W/ "A" TO RECORD ALL ENRIES
                 f.write(city_name + "," + str(temp) + "," + description + "," + str(wind_speed) + '\n')   
 

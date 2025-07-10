@@ -9,8 +9,6 @@ from features.simple_stats import get_data
 
 
 
-
-
 #Creating GUI Window
 root = tk.Tk()
 root.geometry('1200x800')

@@ -3,7 +3,6 @@
 import requests
 from config import weather_api_url, api_key
 import tkinter as tk
-import os
 
 
 def get_data(entry, temp_label, cond_label, precip_label, max_temp_label, rain_label, snow_label):

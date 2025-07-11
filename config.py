@@ -19,7 +19,6 @@ parameters = {
 
 # Make the request
 response = requests.get(weather_api_url, params=parameters)
-# print(response.json())
 
 # Check if request was successful and get data
 if response.status_code == 200:

@@ -1,6 +1,5 @@
 #WEATHER HISTORY TRACKER
 
-
 import requests
 from config import weather_api_url, api_key
 import tkinter as tk
@@ -26,8 +25,10 @@ def get_data(entry, temp_label, cond_label, precip_label, max_temp_label, rain_l
             wind_speed = info['wind']['speed']
             max_temp = info['main']['temp_max']
             rain = info.get('rain', {}).get('1h', 0.0)
+            #convert mm/hr into inches/hr
             rain_in = rain / 25.4
             snow = info.get('snow', {}).get('1h', 0.0)
+            #convert mm/hr into inches/hr
             snow_in = snow / 25.4
 
 

@@ -150,10 +150,11 @@ button_frame.grid(row=1, column=1,
                   padx=10) 
 button_frame.grid_columnconfigure(0,weight=1)
 
+#Update button
 update_button = tk.Button(button_frame, text='Update', bg='light gray', command=lambda: get_data(entry, temp_label, cond_label, wind_label, max_temp_label, rain_label, snow_label))
 update_button.grid(row=0, column=0, columnspan=2,sticky='we', pady=10, padx=10)
 
-
+#To clear entry fields an weather stats info
 def refresh():
     drop_box.current(0)
     entry.delete(0, tk.END)
@@ -167,6 +168,7 @@ def refresh():
 clear_button = tk.Button(button_frame, text='Clear', bg='light gray', command=refresh)
 clear_button.grid(row=1, column=0, sticky='we', pady=10, padx=10)
 
+#Button to change theme
 theme_button = tk.Button(button_frame, text='Change Theme: (Dark/Light)', bg='light gray')
 theme_button.grid(row=2, column=0, sticky='we', pady=10, padx=10)
 

@@ -8,6 +8,7 @@ from features.simple_stats import get_data
 
 
 
+
 #Creating GUI Window
 root = tk.Tk()
 root.geometry('1200x800')
@@ -98,47 +99,55 @@ weather_frame.grid(
 
 
 #DEFAULT_WEATHER_LABELS
+date_label = tk.Label(
+    weather_frame,
+    text='Date: --', bg='light grey')
+date_label.grid(row=0, column=0,
+                sticky='w',
+                pady=5)
+
 temp_label = tk.Label(
     weather_frame,
     text='Current Temperature: --', bg='light grey')
-temp_label.grid(row=0,column=0,
+temp_label.grid(row=1,column=0,
                 sticky='w', 
                 pady=5)
 
 wind_label = tk.Label(
     weather_frame,
     text='Wind Speed: --', bg='light grey')
-wind_label.grid(row=1, column=0,
+wind_label.grid(row=2, column=0,
     sticky='w', 
     pady=5)
 
 cond_label = tk.Label(
     weather_frame,
     text='Conditions: --', bg='light grey')
-cond_label.grid(row=2,column=0, 
+cond_label.grid(row=3,column=0, 
     sticky='w', 
     pady=5)
 
 max_temp_label = tk.Label(
     weather_frame,
     text='Max Temp: --', bg='light grey')
-max_temp_label.grid(row=3,column=0, 
+max_temp_label.grid(row=4,column=0, 
     sticky='w', 
     pady=5)
 
 rain_label = tk.Label(
     weather_frame,
     text='Rain: --', bg='light grey')
-rain_label.grid(row=4,column=0, 
+rain_label.grid(row=5,column=0, 
     sticky='w', 
     pady=5)
 
 snow_label = tk.Label(
     weather_frame,
     text='Snow: --', bg='light grey')
-snow_label.grid(row=5,column=0, 
+snow_label.grid(row=6,column=0, 
     sticky='w', 
     pady=5)
+
 
 
         
@@ -151,7 +160,7 @@ button_frame.grid(row=1, column=1,
 button_frame.grid_columnconfigure(0,weight=1)
 
 #Update button
-update_button = tk.Button(button_frame, text='Update', bg='light gray', command=lambda: get_data(entry, temp_label, cond_label, wind_label, max_temp_label, rain_label, snow_label))
+update_button = tk.Button(button_frame, text='Update', bg='light gray', command=lambda: get_data(entry, temp_label, cond_label, wind_label, max_temp_label, rain_label, snow_label, date_label))
 update_button.grid(row=0, column=0, columnspan=2,sticky='we', pady=10, padx=10)
 
 #To clear entry fields an weather stats info
@@ -164,6 +173,7 @@ def refresh():
     max_temp_label.configure(text='Max Temp: --')
     rain_label.configure(text='Rain: --')
     snow_label.configure(text='Snow: --')
+    date_label.configure(text='Date: --')
     
 clear_button = tk.Button(button_frame, text='Clear', bg='light gray', command=refresh)
 clear_button.grid(row=1, column=0, sticky='we', pady=10, padx=10)

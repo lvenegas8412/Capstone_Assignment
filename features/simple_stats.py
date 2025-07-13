@@ -37,7 +37,7 @@ def get_data(entry, temp_label, cond_label, wind_label, max_temp_label, rain_lab
             pst_time = utc_time.replace(tzinfo=pytz.utc).astimezone(pst_timezone)
             
             #Update labels
-            date_label.config(text=f'Date & Time: {pst_time.strftime('%m-%d-%Y - %I:%M:%S %p')}')
+            date_label.config(text=f'Date & Time: {pst_time.strftime('%m-%d-%Y / %I:%M:%S %p')}')
             temp_label.config(text="Current Temperature: " + str(temp)+ ' °F') 
             cond_label.config(text="Conditions: " + description)
             wind_label.config(text="Wind Speed: " + str(round(wind_speed)) + 'mph')
@@ -45,7 +45,7 @@ def get_data(entry, temp_label, cond_label, wind_label, max_temp_label, rain_lab
             rain_label.config(text=f"Rain: {rain_in:.2f} in/hr")
             snow_label.config(text=f"Snow: {snow_in:.2f} in/hr")
             with open("data.txt", "a") as f: 
-                f.write(city_name + ", " + str(temp) + ", " + description + ", " + str(wind_speed) + ", " + pst_time.strftime('%m-%d-%Y - %I:%M:%S %p') +'\n')   
+                f.write(city_name + ", " + str(temp) + ", " + description + ", " + str(wind_speed) + ", " + pst_time.strftime('%m-%d-%Y / %I:%M:%S %p') +'\n')   
 
         except Exception as e:
             entry.delete(0, tk.END)

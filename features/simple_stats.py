@@ -3,9 +3,10 @@
 import requests
 from config import weather_api_url, api_key
 import tkinter as tk
+from datetime import datetime
+import pytz
 
-
-def get_data(entry, temp_label, cond_label, precip_label, max_temp_label, rain_label, snow_label):
+def get_data(entry, temp_label, cond_label, wind_label, max_temp_label, rain_label, snow_label, date_label):
     city_name = entry.get()
     
     if city_name != '':
@@ -29,17 +30,22 @@ def get_data(entry, temp_label, cond_label, precip_label, max_temp_label, rain_l
             snow = info.get('snow', {}).get('1h', 0.0)
             #convert mm/hr into inches/hr
             snow_in = snow / 25.4
-
-
-            #Reset the Weather Labels with updated information
+            #get date
+            utc_timestamp = info['dt']
+            utc_time = datetime.utcfromtimestamp(utc_timestamp)
+            pst_timezone = pytz.timezone('US/Pacific')
+            pst_time = utc_time.replace(tzinfo=pytz.utc).astimezone(pst_timezone)
+            
+            #Update labels
+            date_label.config(text=f'Date & Time: {pst_time.strftime('%m-%d-%Y - %I:%M:%S %p')}')
             temp_label.config(text="Current Temperature: " + str(temp)+ ' °F') 
             cond_label.config(text="Conditions: " + description)
-            precip_label.config(text="Wind Speed: " + str(round(wind_speed)) + 'mph')
+            wind_label.config(text="Wind Speed: " + str(round(wind_speed)) + 'mph')
             max_temp_label.config(text='Max Temp: ' + str(max_temp)+ ' °F')
             rain_label.config(text=f"Rain: {rain_in:.2f} in/hr")
             snow_label.config(text=f"Snow: {snow_in:.2f} in/hr")
             with open("data.txt", "a") as f: 
-                f.write(city_name + "," + str(temp) + "," + description + "," + str(wind_speed) + '\n')   
+                f.write(city_name + ", " + str(temp) + ", " + description + ", " + str(wind_speed) + ", " + pst_time.strftime('%m-%d-%Y - %I:%M:%S %p') +'\n')   
 
         except Exception as e:
             entry.delete(0, tk.END)

@@ -1,10 +1,11 @@
 ✍️ Section 1: Week 11 Reflection
 
-Key Takeaways: What did you learn about capstone goals and expectations?
-    I learned that we will essentially put everything we have worked on into a comprehensive project. The expectation is for us to not only make the working app, but let our creativity come out. We will rely on things we have learned in class and will be expected to think of solutions if we get stuck on a problem. Problem solving.
+Key Takeaways: 
+What did you learn about capstone goals and expectations?
+    I learned that we will essentially put everything we have worked on into a comprehensive project. The expectation is for us to not only make the working app, but let our creativity come out. We will rely on things we have learned in class and will be expected to think of solutions if we get stuck on a problem. Problem solving.```
      
 
-Concept Connections: Which Week 1–10 skills feel strongest? Which need more practice?
+Concept Connections: Which Week 1–10 skills feel strongest? Which need more practice
     My stongest: I feel tat the Tkinter and Sqlite have been the topics that I have been able to comprehend more efficiently
     Need work on: getting syntax more easily flowing when writting code. I have to rely so much on documentation right now, that it can be at times frustrating.
 
@@ -14,25 +15,29 @@ Early Challenges: Any blockers (e.g., API keys, folder setup)?
 Support Strategies: Which office hours or resources can help you move forward?
     With my schedule, office hours on Sundays seem to work the best. I work and live on the west coast so most of the other hours are either when I am at work or after-class when I am driving home from work.
 
-    🧠 Section 2: Feature Selection Rationale
+🧠 Section 2: Feature Selection Rationale
 List three features + one enhancement you plan to build.
 
 #	Feature Name	Difficulty (1–3)	Why You Chose It / Learning Goal
-1	History Tracker - I feel that any good weather app will have temp trackers to be able to show the user patters
-2	Simple Stats- Simalary, stats are important for users to be able to see what the day's highest or lowest temp was.	
-3	Theme Switcher- I use this alot myself. I like being able to switch to dark mode. I will probably start on dark mode but have an option for user to go to light mode.
+1	```History Tracker``` -  I feel that any good weather app will have temp trackers to be able to show the user patters
+
+2	```Simple Stats```- Simalary, stats are important for users to be able to see what the day's highest or lowest temp was.
+
+3	```Theme Switcher```- I use this alot myself. I like being able to switch to dark mode. I will probably start on dark mode but have an option for user to go to light mode.
 Enhancement: I will add descriptive images for the different temps.
 
-🗂️ Section 3: High-Level Architecture Sketch
+🗂️ ```Section 3```: High-Level Architecture Sketch
 Add a diagram or a brief outline that shows:
 PLEASE SEE SCREENSHOTS FOLDER
 Core modules and folders
 
-📊 Section 4: Data Model Plan
+📊 ```Section 4```: Data Model Plan
 Fill in your planned data files or tables:
 
 File/Table Name	Format (txt, json, csv, other)	Example Row
-weather_history.txt	txt	2025-06-09,Oxnard,78,Sunny,precipitation
+weather_history.txt	
+
+```txt```	2025-06-09,Oxnard,78,Sunny,precipitation
 
 📆 Section 5: Personal Project Timeline (Weeks 12–17)
 Customize based on your availability:

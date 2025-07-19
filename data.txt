@@ -1,1 +1,5 @@
 las vegas,100.22,clear sky,18.41
+oxnard, 73.26, clear sky, 11.5, 07-17-2025 / 04:58 PM
+oxnard, 71.13, clear sky, 11.5, 07-18-2025 / 06:21 PM
+new york, 78.31, clear sky, 11.5, 07-18-2025 / 06:50 PM
+Oxnard, 74.57, clear sky, 13.8, 07-19-2025 / 02:47 PM

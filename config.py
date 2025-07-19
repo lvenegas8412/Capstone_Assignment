@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 from dotenv import load_dotenv
 
-
+#OPENWEATHERMAP API
 load_dotenv()
 api_key = os.getenv('my_api')
 
@@ -29,3 +29,29 @@ else:
     print(response.text)
 
 
+
+
+# WEATHERBIT API
+wbapi_key = os.getenv('weatherbit_api')
+
+weatherbit_api_url = "https://api.weatherbit.io/v2.0/history/daily"
+
+# Parameters for our request
+wb_parameters = {
+    "city": "Oxnard,US",
+    "start_date": 'start_date',
+    "end_date": 'end_date', 
+    "key": wbapi_key,
+    "units": "I"
+}
+
+# Make the request
+wb_response = requests.get(weatherbit_api_url, params=wb_parameters)
+
+# Check if request was successful and get data
+if wb_response.status_code == 200:
+    wb_weather_data = wb_response.json()
+
+else:
+    print(f"Error: {wb_response.status_code}")
+    print(wb_response.text)

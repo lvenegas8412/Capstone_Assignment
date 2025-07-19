@@ -18,23 +18,18 @@
 Capstone_Assignment/
 │   config.py
 │   data.txt
-│   gui_window.py
 │   main.py
 │   requirements.txt
-│   __pycache__/
-│       config.cpython-313.pyc
+│   
 │
 ├── docs/
 │     README.md
-│     README2.md  # (this file)
 │     week_11_reflection.md
 │
 ├── features/
 │     history_tracker.py
 │     simple_stats.py
 │     theme_switcher.py
-│     __pycache__/
-│         simple_stats.cpython-313.pyc
 │
 ├── screenshots/
 │     diagram.pdf

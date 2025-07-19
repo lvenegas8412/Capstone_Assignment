@@ -1,5 +1,14 @@
 las vegas,100.22,clear sky,18.41
+<<<<<<< HEAD
 oxnard, 73.26, clear sky, 11.5, 07-17-2025 / 04:58 PM
 oxnard, 71.13, clear sky, 11.5, 07-18-2025 / 06:21 PM
 new york, 78.31, clear sky, 11.5, 07-18-2025 / 06:50 PM
 Oxnard, 74.57, clear sky, 13.8, 07-19-2025 / 02:47 PM
+=======
+Oxnard,66.87,clear sky,5.75
+Oxnard,71.08,clear sky,11.5
+Calabasas,81.59,clear sky,11.5
+Oxnard, 60.21, mist, 4.61, 07-13-2025 / 06:41:47 AM
+New York, 75.6, overcast clouds, 8.05, 07-13-2025 / 06:43:09 AM
+Calabasas, 61.2, mist, 5.75, 07-13-2025 / 06:44 AM
+>>>>>>> 4bf9aa3d47e415569a4fcdcfe3fd820fed46fda6

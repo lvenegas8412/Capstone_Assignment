@@ -66,6 +66,11 @@ class WeatherDashboard(tk.Tk):
         self.rain_label = self.make_weather_label('Rain: --', 5)
         self.snow_label = self.make_weather_label('Snow: --', 6)
 
+        # Weather Icon
+        self.weather_icon_label = tk.Label(self.weather_frame, bg= 'light gray')
+        self.weather_icon_label.grid(row=7, column=0, rowspan=2, padx=10, pady=10)
+
+
         # Button Frame
         self.button_frame = tk.Frame(self, padx=10)
         self.button_frame.grid(row=1, column=1, sticky='nwes', pady=10, padx=10)
@@ -114,7 +119,9 @@ class WeatherDashboard(tk.Tk):
     def update_weather(self):
         get_data(self.entry, self.temp_label, self.cond_label,
                  self.wind_label, self.max_temp_label,
-                 self.rain_label, self.snow_label, self.date_label)
+                 self.rain_label, self.snow_label, self.date_label, self.weather_icon_label)
+        
+      
 
     def create_plot(self):
         self.figure = Figure(figsize=(8, 4), dpi=100)

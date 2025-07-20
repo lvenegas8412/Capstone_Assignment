@@ -1,12 +1,13 @@
 #WEATHER HISTORY TRACKER
 
 import requests
-from config import weather_api_url, api_key
+from config import weather_api_url, api_key, icon_url
 import tkinter as tk
 from datetime import datetime
 import pytz
+from PIL import Image, ImageTk 
 
-def get_data(entry, temp_label, cond_label, wind_label, max_temp_label, rain_label, snow_label, date_label):
+def get_data(entry, temp_label, cond_label, wind_label, max_temp_label, rain_label, snow_label, date_label, weather_icon_label):
     city_name = entry.get()
     
     if city_name != '':
@@ -35,6 +36,11 @@ def get_data(entry, temp_label, cond_label, wind_label, max_temp_label, rain_lab
             utc_time = datetime.utcfromtimestamp(utc_timestamp)
             pst_timezone = pytz.timezone('US/Pacific')
             pst_time = utc_time.replace(tzinfo=pytz.utc).astimezone(pst_timezone)
+            icon_id = info['weather'][0]['icon'] 
+
+
+
+           
             
             #Update labels
             date_label.config(text=f'Date & Time: {pst_time.strftime('%m-%d-%Y / %I:%M %p')}')
@@ -44,6 +50,11 @@ def get_data(entry, temp_label, cond_label, wind_label, max_temp_label, rain_lab
             max_temp_label.config(text='Max Temp: ' + str(max_temp)+ ' °F')
             rain_label.config(text=f"Rain: {rain_in:.2f} in/hr")
             snow_label.config(text=f"Snow: {snow_in:.2f} in/hr")
+            img = Image.open(requests.get(icon_url, stream=True).raw)
+            img = img.resize((200, 200))  
+            photo = ImageTk.PhotoImage(img)             
+            weather_icon_label.config(image=photo)
+            weather_icon_label.image = photo            
             with open("data.txt", "a") as f: 
                 f.write(city_name + ", " + str(temp) + ", " + description + ", " + str(wind_speed) + ", " + pst_time.strftime('%m-%d-%Y / %I:%M %p') +'\n')   
 

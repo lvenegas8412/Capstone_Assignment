@@ -10,6 +10,7 @@
 ## Assignmet Tasks
 
 ``` Feature 1```
+  My first feature is getting current data from a city of your choosing. This request will give us the current temperature, wind speed, conditions, the max temperature of that day, how much rain and/or snow.
 
 ``` Feature 2```
 

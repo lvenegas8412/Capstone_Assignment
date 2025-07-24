@@ -22,7 +22,8 @@ def fetch_weather_history(city: str, days: int) -> list:
         'city': city,
         'start_date': start_date.strftime('%Y-%m-%d'),
         'end_date': end_date.strftime('%Y-%m-%d'),
-        'key': wbapi_key
+        'key': wbapi_key,
+        'units': 'I'
     }
 
     try:

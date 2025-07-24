@@ -1,7 +1,7 @@
 #WEATHER HISTORY TRACKER
 
 import requests
-from config import weather_api_url, api_key, icon_url
+from config import weather_api_url, api_key
 import tkinter as tk
 from datetime import datetime
 import pytz
@@ -19,7 +19,7 @@ def get_data(entry, temp_label, cond_label, wind_label, max_temp_label, rain_lab
             info = data.json()
             if data.status_code !=200:
                 raise ValueError("Invalid city")
-            
+
             #ID info I want to bring from OpenWeather
             temp= info['main']['temp']
             description = info['weather'][0]['description']
@@ -37,6 +37,7 @@ def get_data(entry, temp_label, cond_label, wind_label, max_temp_label, rain_lab
             pst_timezone = pytz.timezone('US/Pacific')
             pst_time = utc_time.replace(tzinfo=pytz.utc).astimezone(pst_timezone)
             icon_id = info['weather'][0]['icon'] 
+            icon_url = f"http://openweathermap.org/img/wn/{icon_id}@2x.png"
 
 
 

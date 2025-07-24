@@ -3,15 +3,19 @@ import json
 import os
 from datetime import datetime
 from dotenv import load_dotenv
+# from features.simple_stats import icon_id
 
 #OPENWEATHERMAP API
 load_dotenv()
 api_key = os.getenv('my_api')
-icon_id = '02d'
+
 
 
 weather_api_url = "https://api.openweathermap.org/data/2.5/weather"        
-icon_url = f"http://openweathermap.org/img/wn/{icon_id}.png"
+
+
+
+
 
 # Parameters for our request
 parameters = {

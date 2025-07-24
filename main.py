@@ -115,6 +115,7 @@ class WeatherDashboard(tk.Tk):
         self.rain_label.config(text='Rain: --')
         self.snow_label.config(text='Snow: --')
         self.date_label.config(text='Date: --')
+        self.weather_icon_label.config(image='')
 
     def update_weather(self):
         get_data(self.entry, self.temp_label, self.cond_label,

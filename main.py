@@ -5,6 +5,9 @@ from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from features.simple_stats import get_data
 from features.theme_switcher import toggle_theme
+from features.history_tracker import fetch_weather_history
+from config import weatherbit_api_url, wbapi_key
+
 
 
 class WeatherDashboard(tk.Tk):
@@ -118,17 +121,61 @@ class WeatherDashboard(tk.Tk):
         self.weather_icon_label.config(image='')
 
     def update_weather(self):
+
+        # Update current weather
         get_data(self.entry, self.temp_label, self.cond_label,
-                 self.wind_label, self.max_temp_label,
-                 self.rain_label, self.snow_label, self.date_label, self.weather_icon_label)
-        
-      
+                self.wind_label, self.max_temp_label,
+                self.rain_label, self.snow_label, self.date_label, self.weather_icon_label)
+
+        city = self.entry_var.get().strip()
+        if not city:
+            print("City is empty.")
+            return
+
+        # Time range mapping
+        time_range_map = {
+            'Last 7 days': 7,
+            'Last 14 Days': 14,
+            'Last 30 days': 30
+        }
+
+        selected = self.drop_box.get()
+        days = time_range_map.get(selected)
+
+        if not days:
+            print("Invalid or no time range selected.")
+            return
+
+        # Fetch weather history and plot
+        history = fetch_weather_history(city, days)
+        if history:
+            self.update_plot_data(history)
+        else:
+            print("No data to plot.")
+
+            
 
     def create_plot(self):
         self.figure = Figure(figsize=(8, 4), dpi=100)
         self.plot = self.figure.add_subplot(111)
         self.canvas = FigureCanvasTkAgg(self.figure, self.viz_frame)
         self.canvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)
+
+    def update_plot_data(self, weather_history: list):
+        self.plot.clear()
+        dates = [entry['date'] for entry in weather_history]
+        temps = [entry['temp'] for entry in weather_history]
+
+        self.plot.plot(dates, temps, marker='o', linestyle='-', color='blue')
+        self.plot.set_title('Historical Temperature')
+        self.plot.set_xlabel('Date')
+        self.plot.set_ylabel('Temperature (°C)')
+        self.plot.tick_params(axis='x', rotation=45)
+        self.plot.grid(True)
+        self.figure.tight_layout()
+        self.canvas.draw()
+
+        
 
 
 if __name__ == "__main__":

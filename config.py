@@ -3,19 +3,11 @@ import json
 import os
 from datetime import datetime
 from dotenv import load_dotenv
-# from features.simple_stats import icon_id
 
 #OPENWEATHERMAP API
 load_dotenv()
 api_key = os.getenv('my_api')
-
-
-
 weather_api_url = "https://api.openweathermap.org/data/2.5/weather"        
-
-
-
-
 
 # Parameters for our request
 parameters = {
@@ -34,8 +26,6 @@ if response.status_code == 200:
 else:
     print(f"Error: {response.status_code}")
     print(response.text)
-
-
 
 
 # WEATHERBIT API

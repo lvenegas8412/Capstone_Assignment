@@ -5,6 +5,7 @@ def apply_light_theme(app):
     app.configure(bg='white')
     app.title_label.config(bg='white', fg='black')
     app.weather_frame.config(bg='light gray')
+    app.input_frame.config(bg='light gray')
     for label in [app.date_label, app.temp_label, app.wind_label,
                     app.cond_label, app.max_temp_label, app.rain_label, app.snow_label]:
         label.config(bg='light gray', fg='black')
@@ -22,13 +23,13 @@ def apply_light_theme(app):
 def apply_dark_theme(app):
     app.configure(bg='black')
     app.title_label.config(bg='black', fg='white')
-    app.weather_frame.config(bg='gray20')
+    app.weather_frame.config(bg='gray30')
+    app.input_frame.config(bg='gray30')
     for label in [app.date_label, app.temp_label, app.wind_label,
                     app.cond_label, app.max_temp_label, app.rain_label, app.snow_label]:
-        label.config(bg='gray20', fg='white')
+        label.config(bg='gray30', fg='white')
 
     app.button_frame.config(bg='black')
-    # app.input_frame.config(bg='black')
     app.update_button.config(bg='gray30', fg='white')
     app.clear_button.config(bg='gray30', fg='white')
     app.theme_button.config(bg='gray30', fg='white')

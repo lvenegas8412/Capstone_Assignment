@@ -170,7 +170,7 @@ class WeatherDashboard(tk.Tk):
         self.plot.plot(dates, temps, marker='o', linestyle='-', color='blue')
         self.plot.set_title('Historical Temperature')
         self.plot.set_xlabel('Date')
-        self.plot.set_ylabel('Temperature (°C)')
+        self.plot.set_ylabel('Temperature (°F)')
         self.plot.tick_params(axis='x', rotation=45)
         self.plot.grid(True)
         self.figure.tight_layout()

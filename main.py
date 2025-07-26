@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, messagebox
 from datetime import datetime
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
@@ -123,7 +123,7 @@ class WeatherDashboard(tk.Tk):
 
     def update_weather(self):
 
-        # Update current weather
+        # Update current weather in Simple Stats
         get_data(self.entry, self.temp_label, self.cond_label,
                 self.wind_label, self.max_temp_label,
                 self.rain_label, self.snow_label, self.date_label, self.weather_icon_label)
@@ -131,7 +131,7 @@ class WeatherDashboard(tk.Tk):
         city = self.entry_var.get().strip()
         if not city:
             print("City is empty.")
-            return
+            return 
 
         # Time range mapping
         time_range_map = {
@@ -149,10 +149,14 @@ class WeatherDashboard(tk.Tk):
 
         # Fetch weather history and plot
         history = fetch_weather_history(city, days)
-        if history:
-            self.update_plot_data(history)
-        else:
-            print("No data to plot.")
+
+        if not history:
+            print("Invalid city or no data found.")
+            return  # 👈 This stops further execution
+        print(history)
+        
+        self.update_plot_data(history)
+
 
             
 

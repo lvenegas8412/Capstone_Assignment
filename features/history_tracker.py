@@ -4,12 +4,7 @@ from datetime import datetime, timedelta
 from config import wbapi_key
 
 def fetch_weather_history(city: str, days: int) -> list:
-    """
-    Fetch past weather data using Weatherbit API.
 
-    Returns:
-        List of dicts: [{'date': str, 'temp': float}, ...]
-    """
     if not wbapi_key:
         raise ValueError("Missing API key")
 
@@ -30,6 +25,13 @@ def fetch_weather_history(city: str, days: int) -> list:
         response = requests.get(url, params=params)
         response.raise_for_status()
         data = response.json()
+        if "data" not in data or not data["data"]:
+            raise ValueError("No weather data returned — likely invalid city.")
+
+        # Optional: Double-check city match in response
+        if "city_name" in data and data["city_name"].lower() != city.lower():
+            raise ValueError(f"City not recognized: {city}")
+        
         history = [
             {'date': entry['datetime'], 'temp': entry['temp']}
             for entry in data.get('data', [])

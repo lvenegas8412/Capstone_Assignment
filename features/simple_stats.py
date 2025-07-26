@@ -6,6 +6,8 @@ import tkinter as tk
 from datetime import datetime
 import pytz
 from PIL import Image, ImageTk 
+from tkinter import messagebox
+
 
 def get_data(entry, temp_label, cond_label, wind_label, max_temp_label, rain_label, snow_label, date_label, weather_icon_label):
     city_name = entry.get()
@@ -64,7 +66,9 @@ def get_data(entry, temp_label, cond_label, wind_label, max_temp_label, rain_lab
             entry.insert(tk.END,'ENTER A VALID CITY')
             entry.config(foreground='red')                 
             entry.config(foreground='black')
-            print("Error:", e) 
+            print("Error:", e)
+            messagebox.showerror("Invalid Input", str(e))
+            
     else:
         print("No city")
 

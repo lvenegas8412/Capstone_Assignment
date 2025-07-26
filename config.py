@@ -1,7 +1,7 @@
 import requests
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
 
 #OPENWEATHERMAP API
@@ -29,6 +29,10 @@ else:
 
 
 # WEATHERBIT API
+end_date = datetime.now().date()
+start_date = end_date - timedelta(days=1)
+start_date_str = start_date.strftime('%Y-%m-%d')
+end_date_str = end_date.strftime('%Y-%m-%d')
 wbapi_key = os.getenv('weatherbit_api')
 
 weatherbit_api_url = "https://api.weatherbit.io/v2.0/history/daily"
@@ -36,8 +40,8 @@ weatherbit_api_url = "https://api.weatherbit.io/v2.0/history/daily"
 # Parameters for our request
 wb_parameters = {
     "city": "Oxnard,US",
-    "start_date": 'start_date',
-    "end_date": 'end_date', 
+    "start_date": start_date_str,
+    "end_date": end_date_str, 
     "key": wbapi_key,
     "units": "I"
 }

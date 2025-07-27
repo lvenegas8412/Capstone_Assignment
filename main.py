@@ -22,7 +22,7 @@ class WeatherDashboard(tk.Tk):
         self.current_theme = 'light'
 
         # Store city suggestions (this can be a predefined list or fetched from an API)
-        self.city_suggestions = ["New York", "Los Angeles", "Oxnard", "Chicago", "San Francisco", "Boston", "Dallas", "Miami", "Seattle"]
+        self.city_suggestions = ["New York City", "Los Angeles", "Oxnard", "Chicago", "San Francisco", "Boston", "Dallas", "Miami", "Seattle", "St. Louis"]
 
 
         self.create_widgets()

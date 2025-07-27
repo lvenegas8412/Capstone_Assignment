@@ -128,7 +128,7 @@ class WeatherDashboard(tk.Tk):
                 self.wind_label, self.max_temp_label,
                 self.rain_label, self.snow_label, self.date_label, self.weather_icon_label)
 
-        city = self.entry_var.get().strip()
+        city = self.entry_var.get()
         if not city:
             print("City is empty.")
             return 

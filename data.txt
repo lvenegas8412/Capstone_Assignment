@@ -7,3 +7,8 @@ Oxnard, 67.91, few clouds, 19.57, 07-23-2025 / 06:38 PM
 New York, 74.84, clear sky, 13.8, 07-23-2025 / 06:38 PM
 Oxnard, 61.74, broken clouds, 6.91, 07-23-2025 / 10:00 PM
 Oxnard, 70.81, clear sky, 19.57, 07-24-2025 / 05:22 PM
+New York, 74.97, haze, 10, 07-26-2025 / 09:46 PM
+Oxnard, 62.1, clear sky, 13.8, 07-26-2025 / 09:50 PM
+St. Louis, 83.8, clear sky, 4.61, 07-26-2025 / 09:51 PM
+New York, 74.91, haze, 10, 07-26-2025 / 09:49 PM
+New York City, 74.95, haze, 10, 07-26-2025 / 09:51 PM

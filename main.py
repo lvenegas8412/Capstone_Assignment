@@ -21,6 +21,9 @@ class WeatherDashboard(tk.Tk):
         self.after(1000, lambda: self.attributes('-topmost', False))
         self.current_theme = 'light'
 
+        # Store city suggestions (this can be a predefined list or fetched from an API)
+        self.city_suggestions = ["New York", "Los Angeles", "Oxnard", "Chicago", "San Francisco", "Boston", "Dallas", "Miami", "Seattle"]
+
 
         self.create_widgets()
         self.configure_layout()
@@ -47,14 +50,21 @@ class WeatherDashboard(tk.Tk):
 
         self.entry_var = tk.StringVar()
         self.entry = ttk.Entry(self.input_frame, textvariable=self.entry_var)
-        self.entry.grid(row=0, column=1)
+        self.entry.grid(row=0, column=1, pady=5, padx=20)
+
+        self.suggestion_listbox = tk.Listbox(self.input_frame, height=1, width=15)
+        self.suggestion_listbox.grid(row=0, column=2, pady=5, padx=5, sticky='w')
+        self.suggestion_listbox.grid_forget()  # Hide it initially
+
+            # Bind the entry widget to update suggestions
+        self.entry.bind('<KeyRelease>', self.update_suggestions)
 
         self.drop_box = ttk.Combobox(self.input_frame, values=['--', 'Last 7 days', 'Last 14 Days', 'Last 30 days'])
         self.drop_box.current(0)
-        self.drop_box.grid(row=1, column=1, sticky='w', pady=5, padx=5)
+        self.drop_box.grid(row=0, column=3, sticky='w', pady=5, padx=5)
 
         self.drop_box_label = ttk.Label(self.input_frame, text='Time Range:')
-        self.drop_box_label.grid(row=1, column=0, sticky='w', pady=10)
+        self.drop_box_label.grid(row=0, column=2, sticky='w', pady=10)
 
         # Weather Frame
         self.weather_frame = tk.LabelFrame(self, text='CURRENT WEATHER STATS', bg='light gray', padx=10)
@@ -122,6 +132,37 @@ class WeatherDashboard(tk.Tk):
         self.date_label.config(text='Date: --')
         self.weather_icon_label.config(image='')
         self.plot.clear()
+
+    def update_suggestions(self, event):
+        city = self.entry_var.get().lower()
+
+        # Only show suggestions if there's at least 2 characters typed
+        if len(city) < 2:
+            self.suggestion_listbox.grid_forget()  # Hide suggestions if input is too short
+            return
+
+        # Filter city suggestions based on input
+        suggestions = [city_name for city_name in self.city_suggestions if city in city_name.lower()]
+
+        # Update suggestion listbox
+        self.suggestion_listbox.delete(0, tk.END)
+
+        for suggestion in suggestions:
+            self.suggestion_listbox.insert(tk.END, suggestion)
+
+        if suggestions:
+            self.suggestion_listbox.grid(row=1, column=1, pady=10, padx=5, sticky='w')  # Show suggestions
+        else:
+            self.suggestion_listbox.grid_forget()  # Hide if no suggestions
+
+        # Bind an event for selecting a suggestion
+        self.suggestion_listbox.bind("<ButtonRelease-1>", self.select_suggestion)
+
+    def select_suggestion(self, event):
+        # Set entry text to the selected suggestion
+        selected_city = self.suggestion_listbox.get(self.suggestion_listbox.curselection())
+        self.entry_var.set(selected_city)
+        self.suggestion_listbox.grid_forget()  # Hide suggestions after selection
 
     def update_weather(self):
 

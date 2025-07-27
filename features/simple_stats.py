@@ -9,7 +9,7 @@ from PIL import Image, ImageTk
 from tkinter import messagebox
 
 
-def get_data(entry, temp_label, cond_label, wind_label, max_temp_label, rain_label, snow_label, date_label, weather_icon_label):
+def get_data(entry, city_name_label, temp_label, cond_label, wind_label, max_temp_label, rain_label, snow_label, date_label, weather_icon_label):
     city_name = entry.get()
     
     if city_name != '':
@@ -46,6 +46,8 @@ def get_data(entry, temp_label, cond_label, wind_label, max_temp_label, rain_lab
            
             
             #Update labels
+
+            city_name_label.config(text=f'City: {city_name}')
             date_label.config(text=f'Date & Time: {pst_time.strftime('%m-%d-%Y / %I:%M %p')}')
             temp_label.config(text="Current Temperature: " + str(temp)+ ' °F') 
             cond_label.config(text="Conditions: " + description)

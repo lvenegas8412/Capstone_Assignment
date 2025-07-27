@@ -61,17 +61,18 @@ class WeatherDashboard(tk.Tk):
         self.weather_frame.grid(row=2, column=1, sticky='nwes', pady=10, padx=10)
 
         # Weather Labels
-        self.date_label = self.make_weather_label('Date: --', 0)
-        self.temp_label = self.make_weather_label('Current Temperature: --', 1)
-        self.wind_label = self.make_weather_label('Wind Speed: --', 2)
-        self.cond_label = self.make_weather_label('Conditions: --', 3)
-        self.max_temp_label = self.make_weather_label('Max Temp: --', 4)
-        self.rain_label = self.make_weather_label('Rain: --', 5)
-        self.snow_label = self.make_weather_label('Snow: --', 6)
+        self.city_name_label = self.make_weather_label('City: --', 0)
+        self.date_label = self.make_weather_label('Date: --', 1)
+        self.temp_label = self.make_weather_label('Current Temperature: --', 2)
+        self.wind_label = self.make_weather_label('Wind Speed: --', 3)
+        self.cond_label = self.make_weather_label('Conditions: --', 4)
+        self.max_temp_label = self.make_weather_label('Max Temp: --', 5)
+        self.rain_label = self.make_weather_label('Rain: --', 6)
+        self.snow_label = self.make_weather_label('Snow: --', 7)
 
         # Weather Icon
         self.weather_icon_label = tk.Label(self.weather_frame, bg= 'light gray')
-        self.weather_icon_label.grid(row=7, column=0, rowspan=2, padx=10, pady=10)
+        self.weather_icon_label.grid(row=8, column=0, rowspan=2, padx=10, pady=10)
 
 
         # Button Frame
@@ -111,6 +112,7 @@ class WeatherDashboard(tk.Tk):
     def refresh_fields(self):
         self.drop_box.current(0)
         self.entry.delete(0, tk.END)
+        self.city_name_label.config(text='City: --')
         self.temp_label.config(text='Current Temperature: --')
         self.wind_label.config(text='Wind Speed: --')
         self.cond_label.config(text='Conditions: --')
@@ -124,7 +126,7 @@ class WeatherDashboard(tk.Tk):
     def update_weather(self):
 
         # Update current weather in Simple Stats
-        get_data(self.entry, self.temp_label, self.cond_label,
+        get_data(self.entry, self.city_name_label, self.temp_label, self.cond_label,
                 self.wind_label, self.max_temp_label,
                 self.rain_label, self.snow_label, self.date_label, self.weather_icon_label)
 
@@ -167,12 +169,13 @@ class WeatherDashboard(tk.Tk):
         self.canvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)
 
     def update_plot_data(self, weather_history: list):
+        city = self.entry_var.get()
         self.plot.clear()
         dates = [entry['date'] for entry in weather_history]
         temps = [entry['temp'] for entry in weather_history]
 
         self.plot.plot(dates, temps, marker='o', linestyle='-', color='blue')
-        self.plot.set_title('Historical Temperature')
+        self.plot.set_title(f'Historical Temperature - {city}')
         self.plot.set_xlabel('Date')
         self.plot.set_ylabel('Temperature (°F)')
         self.plot.tick_params(axis='x', rotation=45)

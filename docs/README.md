@@ -20,7 +20,7 @@ LIGHT/DARK THEME SWITCHER
   I chose light/dark theme switcher because I use this often in my own personal use. I feel that being able to switch colors adds a little personalization
 
 ``` Feature 3```  
-HISTORY TRACKER - Goes back up to 30 days
+HISTORY TRACKER
 
   I wanted to show patterns of weather data from the last month. I used matplotlib to display the line-graph that can display data from 7 days, 14 days, or 30 days. 
 

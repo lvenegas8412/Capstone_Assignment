@@ -10,13 +10,19 @@
 ## Assignmet Tasks
 
 ``` Feature 1```
+SIMPLE STATS
 
   My first feature is getting current data from a city of your choosing. This request will give us the current temperature, wind speed, conditions, the max temperature of that day, how much rain and/or snow.
 
 ``` Feature 2```
+LIGHT/DARK THEME SWITCHER
+
+  I chose light/dark theme switcher because I use this often in my own personal use. I feel that being able to switch colors adds a little personalization
 
 ``` Feature 3```  
+HISTORY TRACKER
 
+  I wanted to show patterns of weather data from the last month. I used matplotlib to display the line-graph that can display data from 7 days, 14 days, or 30 days.
 
 
 ## Project File Structure

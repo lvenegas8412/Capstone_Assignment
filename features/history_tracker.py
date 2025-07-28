@@ -4,6 +4,10 @@ from datetime import datetime, timedelta
 from config import wbapi_key
 
 def fetch_weather_history(city: str, days: int) -> list:
+    
+            # Check if the city is 'New York' and adjust it to 'New York City' for the API
+    if city.lower() == "new york":
+        city = "New York City"
 
     if not wbapi_key:
         raise ValueError("Missing API key")

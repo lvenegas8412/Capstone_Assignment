@@ -66,6 +66,16 @@ for i, city in enumerate(cities):
             fontsize=9,
             rotation=90
         )
+        ax.annotate(
+            f"{height:.1f}°F",  # formatted to 1 decimal place
+            xy=(bar.get_x() + bar.get_width() / 2, height),
+            xytext=(0, -50),  # move label downward into the bar
+            textcoords="offset points",
+            ha='center',
+            va='top',  # anchor to top so text goes down into the bar
+            fontsize=8,
+            color='black'  # good contrast for dark bars
+        )
 
 ax.set_xticks(x + width * (len(cities) - 1) / 2)
 ax.set_xticklabels(holidays, rotation=45, ha='right')

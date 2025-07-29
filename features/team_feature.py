@@ -80,9 +80,11 @@ for i, city in enumerate(cities):
 ax.set_xticks(x + width * (len(cities) - 1) / 2)
 ax.set_xticklabels(holidays, rotation=45, ha='right')
 
+
 ax.set_ylabel("Temperature (°F)")
 ax.set_title("Temperature on Major Holidays (2024)")
 ax.legend(title="City")
+
 
 plt.tight_layout()
 plt.show()

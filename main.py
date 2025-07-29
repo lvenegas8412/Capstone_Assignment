@@ -42,7 +42,7 @@ class WeatherDashboard(tk.Tk):
         self.title_label.grid(row=0, column=0, columnspan=3, sticky='ew', pady=10)
 
         # Input Frame
-        self.input_frame = tk.LabelFrame(self, text='Input', bg='light gray')
+        self.input_frame = tk.LabelFrame(self, text='Select City', bg='light gray')
         self.input_frame.grid(row=1, column=0, sticky='nwes', pady=10, padx=10)
 
         self.input_label = ttk.Label(self.input_frame, text='Enter your City here:')

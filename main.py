@@ -169,7 +169,7 @@ class WeatherDashboard(tk.Tk):
             self.suggestion_listbox.insert(tk.END, suggestion)
 
         if suggestions:
-            self.suggestion_listbox.grid(row=1, column=1, pady=10, padx=5, sticky='w')  # Show suggestions
+            self.suggestion_listbox.grid(row=2, column=0, pady=10, padx=5, sticky='w')  # Show suggestions
         else:
             self.suggestion_listbox.grid_forget()  # Hide if no suggestions
 

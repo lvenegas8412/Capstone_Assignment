@@ -25,3 +25,4 @@ Oxnard, 75.33, clear sky, 11.5, 07-31-2025 / 03:54 PM
 Oxnard, 75.33, clear sky, 11.5, 07-31-2025 / 03:54 PM
 Oxnard, 74.98, clear sky, 11.5, 07-31-2025 / 04:00 PM
 New York City, 72.01, overcast clouds, 26.46, 07-31-2025 / 04:02 PM
+Kahului, 85.35, few clouds, 29.93, 07-31-2025 / 04:30 PM

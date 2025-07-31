@@ -16,3 +16,4 @@ Los Angeles, 75.58, clear sky, 13.8, 07-27-2025 / 05:55 PM
 austin, 84.2, clear sky, 8.05, 07-27-2025 / 05:50 PM
 new york, 80.76, few clouds, 9.22, 07-27-2025 / 09:48 PM
 Oxnard, 72.93, clear sky, 14.97, 07-30-2025 / 05:56 PM
+New York City, 86.68, clear sky, 12.66, 07-31-2025 / 08:43 AM

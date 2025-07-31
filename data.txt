@@ -17,3 +17,11 @@ austin, 84.2, clear sky, 8.05, 07-27-2025 / 05:50 PM
 new york, 80.76, few clouds, 9.22, 07-27-2025 / 09:48 PM
 Oxnard, 72.93, clear sky, 14.97, 07-30-2025 / 05:56 PM
 New York City, 86.68, clear sky, 12.66, 07-31-2025 / 08:43 AM
+Oxnard, 75.22, clear sky, 11.5, 07-31-2025 / 03:36 PM
+New York City, 72.19, mist, 18.99, 07-31-2025 / 03:34 PM
+new york, 72, mist, 14.97, 07-31-2025 / 03:47 PM
+new york, 72, mist, 14.97, 07-31-2025 / 03:47 PM
+Oxnard, 75.33, clear sky, 11.5, 07-31-2025 / 03:54 PM
+Oxnard, 75.33, clear sky, 11.5, 07-31-2025 / 03:54 PM
+Oxnard, 74.98, clear sky, 11.5, 07-31-2025 / 04:00 PM
+New York City, 72.01, overcast clouds, 26.46, 07-31-2025 / 04:02 PM

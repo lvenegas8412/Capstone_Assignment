@@ -56,25 +56,25 @@ def team_feature():
         temps = pivot[city].values
         bars = ax.bar(x + i * width, temps, width=width, label=city)
 
-        for bar in bars:
-            height = bar.get_height()
-            ax.annotate(
-                person_names.get(city, city),
-                xy=(bar.get_x() + bar.get_width() / 2, height),
-                xytext=(0, 3),
-                textcoords="offset points",
-                ha='center',
-                va='bottom',
-                fontsize=9,
-                rotation=90
-            )
+    for bar in bars:
+        height = bar.get_height()
+        ax.annotate(
+            person_names.get(city, city),
+            xy=(bar.get_x() + bar.get_width() / 2, height),
+            xytext=(0, 3),
+            textcoords="offset points",
+            ha='center',
+            va='bottom',
+            fontsize=9,
+            rotation=90
+        )
 
-    ax.set_xticks(x + width * (len(cities) - 1) / 2)
-    ax.set_xticklabels(holidays, rotation=45, ha='right')
+ax.set_xticks(x + width * (len(cities) - 1) / 2)
+ax.set_xticklabels(holidays, rotation=45, ha='right')
 
-    ax.set_ylabel("Temperature (°F)")
-    ax.set_title("Temperature on Major Holidays (2024-2025)")
-    ax.legend(title="Team Member City")
+ax.set_ylabel("Temperature (°F)")
+ax.set_title("Temperature on Major Holidays (2024)")
+ax.legend(title="City")
 
     plt.tight_layout()
     plt.show()

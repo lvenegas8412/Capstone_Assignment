@@ -16,7 +16,7 @@ class WeatherDashboard(tk.Tk):
         super().__init__()
         self.current_theme = 'light'
         self.title("Capstone Project - Weather Dashboard")
-        self.geometry('1200x800')
+        self.geometry('1250x800')
         self.configure(bg='white')
         self.attributes('-topmost', True)
         self.after(1000, lambda: self.attributes('-topmost', False))
@@ -46,12 +46,12 @@ class WeatherDashboard(tk.Tk):
         self.input_frame = tk.LabelFrame(self, text='Select City', bg='light gray')
         self.input_frame.grid(row=1, column=0, sticky='nwes', pady=10, padx=10)
 
-        self.input_label = ttk.Label(self.input_frame, text='Enter your City here:')
-        self.input_label.grid(row=0, column=0, sticky='w', pady=10)
+        self.input_label = ttk.Label(self.input_frame, text='Select City:')
+        self.input_label.grid(row=0, column=0, sticky='w', pady=5)
 
         self.entry_var = tk.StringVar()
         self.entry = ttk.Entry(self.input_frame, textvariable=self.entry_var)
-        self.entry.grid(row=0, column=1, pady=5, padx=20)
+        self.entry.grid(row=1, column=0, sticky='we',pady=5)
 
         self.suggestion_listbox = tk.Listbox(self.input_frame, height=1, width=15)
         self.suggestion_listbox.grid(row=0, column=2, pady=5, padx=5, sticky='w')
@@ -62,10 +62,13 @@ class WeatherDashboard(tk.Tk):
 
         self.drop_box = ttk.Combobox(self.input_frame, values=['--', 'Last 7 days', 'Last 14 Days', 'Last 30 days'])
         self.drop_box.current(0)
-        self.drop_box.grid(row=0, column=3, sticky='w', pady=5, padx=5)
+        self.drop_box.grid(row=1, column=2, sticky='we', pady=5, padx=5)
 
         self.drop_box_label = ttk.Label(self.input_frame, text='Time Range:')
-        self.drop_box_label.grid(row=0, column=2, sticky='w', pady=10)
+        self.drop_box_label.grid(row=0, column=2, pady=5)
+
+        self.team_label = ttk.Label(self.input_frame, text='Holiday comparsion for each of our cities')
+        self.team_label.grid(row=0, column=4, sticky='w', pady=10)
 
         # Weather Frame
         self.weather_frame = tk.LabelFrame(self, text='CURRENT WEATHER STATS', bg='light gray', padx=10)
@@ -98,7 +101,7 @@ class WeatherDashboard(tk.Tk):
         self.update_button.grid(row=0, column=0, columnspan=2, sticky='we', pady=10, padx=10)
 
         self.clear_button = tk.Button(
-            self.button_frame, text='Clear', bg='light gray', command=self.refresh_fields
+            self.button_frame, text='Refresh', bg='light gray', command=self.refresh_fields
         )
         self.clear_button.grid(row=1, column=0, sticky='we', pady=10, padx=10)
 
@@ -109,11 +112,11 @@ class WeatherDashboard(tk.Tk):
         self.theme_button.grid(row=2, column=0, sticky='we', pady=10, padx=10)
 
         self.team_button = tk.Button(
-            self.button_frame, text='Team', bg='light gray',
+            self.input_frame, text='Compare Weather', bg='light gray',
             command=team_feature
         )
 
-        self.team_button.grid(row=3, column=0, sticky='we', pady=10, padx=10)
+        self.team_button.grid(row=1, column=4, sticky='we', pady=10, padx=10)
 
         # Visualization Frame
         self.viz_frame = ttk.LabelFrame(self, text='Weather History Tracker')

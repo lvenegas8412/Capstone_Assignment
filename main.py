@@ -7,6 +7,7 @@ from features.simple_stats import get_data
 from features.theme_switcher import toggle_theme
 from features.history_tracker import fetch_weather_history
 from config import weatherbit_api_url, wbapi_key
+from features.team_feature import team_feature
 
 
 
@@ -106,6 +107,13 @@ class WeatherDashboard(tk.Tk):
             command=self.toggle_theme 
         )
         self.theme_button.grid(row=2, column=0, sticky='we', pady=10, padx=10)
+
+        self.team_button = tk.Button(
+            self.button_frame, text='Team', bg='light gray',
+            command=team_feature
+        )
+
+        self.team_button.grid(row=3, column=0, sticky='we', pady=10, padx=10)
 
         # Visualization Frame
         self.viz_frame = ttk.LabelFrame(self, text='Weather History Tracker')

@@ -9,73 +9,75 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('team_weather_data.csv', parse_dates=['date'])
-df['max_temp_f'] = df['max_temp'] * 9/5 + 32
+def team_feature():
 
-holidays = {
-    'New Year\'s Day': '2025-01-01',
-    'Independence Day': '2024-07-04',
-    'Thanksgiving': '2024-11-28',
-    'Christmas': '2024-12-25',
-    'Memorial Day': '2025-05-27'
-}
-holidays = {name: pd.to_datetime(date) for name, date in holidays.items()}
+    df = pd.read_csv('team_weather_data.csv', parse_dates=['date'])
+    df['max_temp_f'] = df['max_temp'] * 9/5 + 32
 
-holiday_temps = []
-for holiday, date in holidays.items():
-    day_data = df[df['date'] == date].copy()
-    day_data['holiday'] = holiday
-    holiday_temps.append(day_data)
+    holidays = {
+        'New Year\'s Day': '2025-01-01',
+        'Independence Day': '2024-07-04',
+        'Thanksgiving': '2024-11-28',
+        'Christmas': '2024-12-25',
+        'Memorial Day': '2025-05-27'
+    }
+    holidays = {name: pd.to_datetime(date) for name, date in holidays.items()}
 
-holiday_df = pd.concat(holiday_temps)
+    holiday_temps = []
+    for holiday, date in holidays.items():
+        day_data = df[df['date'] == date].copy()
+        day_data['holiday'] = holiday
+        holiday_temps.append(day_data)
 
-pivot = holiday_df.pivot(index='holiday', columns='city', values='max_temp_f')
+    holiday_df = pd.concat(holiday_temps)
 
-holidays = pivot.index.tolist()
-cities = pivot.columns.tolist()
+    pivot = holiday_df.pivot(index='holiday', columns='city', values='max_temp_f')
 
-x = np.arange(len(holidays))
+    holidays = pivot.index.tolist()
+    cities = pivot.columns.tolist()
 
-# 1. Set bar width based on number of cities so they fit nicely
-width = 0.8 / len(cities)  # total group width ~0.8, divide among cities
+    x = np.arange(len(holidays))
 
-person_names = {
-    'Selmer': 'Andrea',
-    'Oxnard': 'Luis',
-    'Atlanta': 'Brett',
-    'Bronx': 'Mark',
-    'Queens': 'Merhanda',
-    'Clearwater': 'Sarina'
-}
+    # 1. Set bar width based on number of cities so they fit nicely
+    width = 0.8 / len(cities)  # total group width ~0.8, divide among cities
 
-fig, ax = plt.subplots(figsize=(14, 7))  # wider figure for clarity
+    person_names = {
+        'Selmer': 'Andrea',
+        'Oxnard': 'Luis',
+        'Atlanta': 'Brett',
+        'Bronx': 'Mark',
+        'Queens': 'Merhanda',
+        'Clearwater': 'Sarina'
+    }
 
-for i, city in enumerate(cities):
-    temps = pivot[city].values
-    bars = ax.bar(x + i * width, temps, width=width, label=city)
+    fig, ax = plt.subplots(figsize=(14, 7))  # wider figure for clarity
 
-    for bar in bars:
-        height = bar.get_height()
-        ax.annotate(
-            person_names.get(city, city),
-            xy=(bar.get_x() + bar.get_width() / 2, height),
-            xytext=(0, 3),
-            textcoords="offset points",
-            ha='center',
-            va='bottom',
-            fontsize=9,
-            rotation=90
-        )
+    for i, city in enumerate(cities):
+        temps = pivot[city].values
+        bars = ax.bar(x + i * width, temps, width=width, label=city)
 
-ax.set_xticks(x + width * (len(cities) - 1) / 2)
-ax.set_xticklabels(holidays, rotation=45, ha='right')
+        for bar in bars:
+            height = bar.get_height()
+            ax.annotate(
+                person_names.get(city, city),
+                xy=(bar.get_x() + bar.get_width() / 2, height),
+                xytext=(0, 3),
+                textcoords="offset points",
+                ha='center',
+                va='bottom',
+                fontsize=9,
+                rotation=90
+            )
 
-ax.set_ylabel("Temperature (°F)")
-ax.set_title("Temperature on Major Holidays (2024)")
-ax.legend(title="City")
+    ax.set_xticks(x + width * (len(cities) - 1) / 2)
+    ax.set_xticklabels(holidays, rotation=45, ha='right')
 
-plt.tight_layout()
-plt.show()
+    ax.set_ylabel("Temperature (°F)")
+    ax.set_title("Temperature on Major Holidays (2024-2025)")
+    ax.legend(title="Team Member City")
+
+    plt.tight_layout()
+    plt.show()
 
 
 

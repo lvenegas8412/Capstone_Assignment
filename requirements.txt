@@ -1,6 +1,0 @@
-matplotlib
-requests
-pytz
-python-dotenv
-Pillow
-tkinter

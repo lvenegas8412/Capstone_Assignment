@@ -28,7 +28,7 @@ LIGHT/DARK THEME SWITCHER
 
   This bar chart shows comparisons from each of my team member's city for major holidays during the 2024-2025 year. This is a fun visualization to show what each of us was feeling, weather wise, on the same Holiday
 
-``` Person Enhancement ``` VISUAL ICON
+``` Personal Enhancement ``` VISUAL ICON
   
   I chose to include a visual icon that diplays what the current weather looks like. I felt this created a more prcatical touch on what is going on in a particular city.
 

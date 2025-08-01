@@ -9,26 +9,23 @@
 
 ## Assignmet Tasks
 
-``` Feature 1```
-SIMPLE STATS
+``` Feature 1: SIMPLE STATS```
 
   My first feature is getting current data from a city of your choosing. This request will give us the current temperature, wind speed, conditions, the max temperature of that day, how much rain and/or snow.
 
-``` Feature 2```
-LIGHT/DARK THEME SWITCHER
+``` Feature 2: LIGHT/DARK THEME SWITCHER```
 
   I chose light/dark theme switcher because I use this often in my own personal use. I feel that being able to switch colors adds a little personalization
 
-``` Feature 3```  HISTORY TRACKER
+``` Feature 3:  HISTORY TRACKER ```
 
   I wanted to show patterns of weather data from the last month. I used matplotlib to display the line-graph that can display data from 7 days, 14 days, or 30 days. 
 
-  ``` Team Feature ``` 
-  CITY COMPARSIONS FOR TEAM -  
+  ``` Team Feature: CITY COMPARSIONS FOR TEAM ```
 
-  This bar chart shows comparisons from each of my team member's city for major holidays during the 2024-2025 year. This is a fun visualization to show what each of us was feeling, weather wise, on the same Holiday
+  This bar chart shows comparisons from each of my team member's city for major holidays during the 2024-2025 year. This is a fun visualization to show what each of us was feeling, weather-wise, on the same Holiday
 
-``` Personal Enhancement ``` VISUAL ICON
+``` Personal Enhancement:  VISUAL ICON ```
   
   I chose to include a visual icon that diplays what the current weather looks like. I felt this created a more prcatical touch on what is going on in a particular city.
 
@@ -84,7 +81,7 @@ Capstone_Assignment/
      ```
    - For Feature 3 - Theme Switcher:
      ```
-     a. Hit the Change Theme button on the upper right hand corner of the GUI
+     a. Hit the Change Theme Button on the upper right hand corner of the GUI
      b. Theme will switch between Light and Dark Mode
      ```  
    - For Team Feature - City Comparison:

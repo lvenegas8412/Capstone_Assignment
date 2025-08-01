@@ -69,7 +69,8 @@ Capstone_Assignment/
      ```
    - For Feature 2 - History Tracker:
      ```
-      a. In addition to selcting a city from Feature 1, select between time range of 7, 14, or 30 days.
+      a. In addition to selcting a city from Feature 1, select between time range of
+         7, 14, or 30 days.
       b. Hit the Update Button under "Let's Plot"
       c. Plot of weather history will be displayed.
      ```
@@ -79,10 +80,11 @@ Capstone_Assignment/
      b. Theme will switch between Light and Dark Mode
      ```  
    - For Team Feature - City Comparison:
-   ```
-   a. Hit the Compare Weather button under "Weather on holidays for each team member"
-   b. A pop-up window will display the bar graph comparing temperature of each person' city on major holidays.
-   ```
+     ```
+     a. Hit the Compare Weather button under "Weather on holidays for each team member"
+     b. A pop-up window will display the bar graph comparing temperature of each person's 
+        city on major holidays.
+     ```
     
   
 

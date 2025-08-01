@@ -7,6 +7,16 @@
 
 ## Learninig Objectives
 
+  - Understand how to design and implement a Python GUI application for real-world data       retrieval and visualization.
+  - Integrate external APIs to fetch and display current weather data for user-selected cities.
+  - Apply modular programming by organizing features into separate Python modules for maintainability and clarity.
+  - Implement interactive GUI elements, including buttons, input fields, and dynamic displays, using Python libraries.
+
+  - Enhance user experience.
+
+  - Practice team collaboration by incorporating features that highlight contributions from multiple team members.
+  - Manage project files, dependencies, and documentation for reproducibility and ease of use.
+
 ## Assignmet Tasks
 
 ``` Feature 1: SIMPLE STATS```

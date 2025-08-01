@@ -24,7 +24,7 @@ LIGHT/DARK THEME SWITCHER
   I wanted to show patterns of weather data from the last month. I used matplotlib to display the line-graph that can display data from 7 days, 14 days, or 30 days. 
 
   ``` Team Feature ``` 
-  Team City Comparisons  -  
+  CITY COMPARSIONS FOR TEAM -  
 
   This bar chart shows comparisons from each of my team member's city for major holidays during the 2024-2025 year. This is a fun visualization to show what each of us was feeling, weather wise, on the same Holiday
 
@@ -60,7 +60,9 @@ Capstone_Assignment/
      ```
      python main.py
      ```
-   - This will launch the Weather Dashboard GUI.
+  This will launch the Weather Dashboard GUI.
+
+   - tHE 
   
 
 ## Notes

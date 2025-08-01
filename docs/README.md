@@ -56,13 +56,20 @@ Capstone_Assignment/
 ## How to Run the Program
 
 3. **Run the Application**
-   - In the terminal, execute:
+   - In the terminal, execute: This will launch the Weather Dashboard GUI.
      ```
      python main.py
      ```
-  This will launch the Weather Dashboard GUI.
+   - There are 2 input fields and 4 total buttons to chose from
+   -For Feature 1 - Simple Stats
+   ```
+   a. Input a City Name under "Select City"
+   b. Hit the Update Button
+   c. Current Weather will be displayes on the right side under "Current Weather Stats"
+   ```
 
-   - tHE 
+
+    
   
 
 ## Notes

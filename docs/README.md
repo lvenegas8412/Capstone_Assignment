@@ -28,16 +28,21 @@ LIGHT/DARK THEME SWITCHER
 
   This bar chart shows comparisons from each of my team member's city for major holidays during the 2024-2025 year. This is a fun visualization to show what each of us was feeling, weather wise, on the same Holiday
 
+``` Person Enhancement ``` VISUAL ICON
+  
+  I chose to include a visual icon that diplays what the current weather looks like. I felt this created a more prcatical touch on what is going on in a particular city.
 
 ## Project File Structure
 
 ```
 Capstone_Assignment/
-│   config.py
-│   data.txt
 │   main.py
+|   config.py
+│   data.txt
 │   requirements.txt
-│   
+│   .env
+|   .gitignore
+|   team_weather_data.csv
 │
 ├── docs/
 │     README.md
@@ -51,6 +56,10 @@ Capstone_Assignment/
 │
 ├── screenshots/
 │     diagram.pdf
+|     wk_15_Enhancment.png
+|     wk_15_history_tracker.png
+|     wk_15_light_theme.png
+|     wk_15_dark_theme.png
 ```
 
 ## How to Run the Program
@@ -60,7 +69,6 @@ Capstone_Assignment/
      ```
      python main.py
      ```
-   - There are 2 input fields and 4 total buttons to chose from
    - For Feature 1:  Simple Stats
      ```
       a. Input a City Name under "Select City"
@@ -84,6 +92,10 @@ Capstone_Assignment/
      a. Hit the Compare Weather button under "Weather on holidays for each team member"
      b. A pop-up window will display the bar graph comparing temperature of each person's 
         city on major holidays.
+     ```
+   - Refresh
+     ```
+     Hit the Refresh Button to clear the fields.
      ```
     
   

@@ -61,14 +61,28 @@ Capstone_Assignment/
      python main.py
      ```
    - There are 2 input fields and 4 total buttons to chose from
-
-   - For Feature 1 - Simple Stats
+   - For Feature 1:  Simple Stats
      ```
       a. Input a City Name under "Select City"
       b. Hit the Update Button
-      c. Current Weather will be displayes on the right side under "Current Weather Stats"
+      c. Current Weather will be displayed on the right side under "Current Weather Stats"
      ```
-   - For Feature 2 - History Tracker  
+   - For Feature 2 - History Tracker:
+     ```
+      a. In addition to selcting a city from Feature 1, select between time range of 7, 14, or 30 days.
+      b. Hit the Update Button under "Let's Plot"
+      c. Plot of weather history will be displayed.
+     ```
+   - For Feature 3 - Theme Switcher:
+     ```
+     a. Hit the Change Theme button on the upper right hand corner of the GUI
+     b. Theme will switch between Light and Dark Mode
+     ```  
+   - For Team Feature - City Comparison:
+   ```
+   a. Hit the Compare Weather button under "Weather on holidays for each team member"
+   b. A pop-up window will display the bar graph comparing temperature of each person' city on major holidays.
+   ```
     
   
 

@@ -3,7 +3,7 @@
 
 
 ## Overview
-```I have built out a GUI using examples and learning methods from class and assignments.```
+```I have built a GUI using examples and learning methods from class and assignments.```
 
 ## Learninig Objectives
 

@@ -26,3 +26,8 @@ Oxnard, 75.33, clear sky, 11.5, 07-31-2025 / 03:54 PM
 Oxnard, 74.98, clear sky, 11.5, 07-31-2025 / 04:00 PM
 New York City, 72.01, overcast clouds, 26.46, 07-31-2025 / 04:02 PM
 Kahului, 85.35, few clouds, 29.93, 07-31-2025 / 04:30 PM
+New York, 70.12, haze, 24, 07-31-2025 / 06:07 PM
+springfield, 74.86, broken clouds, 16.11, 07-31-2025 / 06:03 PM
+st louis, 74.98, haze, 8.05, 07-31-2025 / 06:07 PM
+St. Louis, 74.98, haze, 8.05, 07-31-2025 / 06:07 PM
+St. Louis, 74.98, haze, 8.05, 07-31-2025 / 06:07 PM

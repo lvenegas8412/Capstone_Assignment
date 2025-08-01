@@ -49,7 +49,7 @@ Capstone_Assignment/
 │     history_tracker.py
 │     simple_stats.py
 │     theme_switcher.py
-      team_feature
+|     team_feature
 │
 ├── screenshots/
 │     diagram.pdf

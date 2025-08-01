@@ -61,14 +61,14 @@ Capstone_Assignment/
      python main.py
      ```
    - There are 2 input fields and 4 total buttons to chose from
-   -For Feature 1 - Simple Stats
-   ```
-   a. Input a City Name under "Select City"
-   b. Hit the Update Button
-   c. Current Weather will be displayes on the right side under "Current Weather Stats"
-   ```
 
-
+   - For Feature 1 - Simple Stats
+     ```
+      a. Input a City Name under "Select City"
+      b. Hit the Update Button
+      c. Current Weather will be displayes on the right side under "Current Weather Stats"
+     ```
+   - For Feature 2 - History Tracker  
     
   
 

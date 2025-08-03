@@ -35,3 +35,7 @@ Oxnard, 64.02, clear sky, 4.61, 08-02-2025 / 08:39 PM
 Oxnard, 64.02, clear sky, 4.61, 08-02-2025 / 08:39 PM
 New York City, 70.47, clear sky, 5.75, 08-02-2025 / 08:38 PM
 Miami, 83.86, few clouds, 6.91, 08-02-2025 / 08:40 PM
+Oxnard, 63.86, clear sky, 4.61, 08-02-2025 / 08:49 PM
+Oxnard, 63.86, clear sky, 4.61, 08-02-2025 / 08:49 PM
+Oxnard, 63.99, clear sky, 4.61, 08-02-2025 / 08:55 PM
+Oxnard, 63.99, clear sky, 4.61, 08-02-2025 / 08:55 PM

@@ -10,7 +10,7 @@ from config import weatherbit_api_url, wbapi_key
 from features.team_feature import team_feature
 
 
-
+#Create the GUI
 class WeatherDashboard(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -36,7 +36,7 @@ class WeatherDashboard(tk.Tk):
         self.rowconfigure(2, weight=1)
 
 
-
+#Create all the widgets, labels, and buttons
     def create_widgets(self):
         # Title
         self.title_label = tk.Label(self, text="Let's Find Some Weather!", font=('Courier', 24, 'bold'), bg='white')
@@ -94,7 +94,7 @@ class WeatherDashboard(tk.Tk):
         self.weather_icon_label.grid(row=8, column=0, rowspan=2, padx=10, pady=10)
 
 
-        # Button Frame
+        # Buttons
         self.button_frame = tk.Frame(self, padx=10)
         self.button_frame.grid(row=1, column=1, sticky='nwes', pady=10, padx=10)
         self.button_frame.grid_columnconfigure(0, weight=1)
@@ -129,14 +129,17 @@ class WeatherDashboard(tk.Tk):
         self.viz_frame = ttk.LabelFrame(self, text='Weather History Tracker')
         self.viz_frame.grid(row=2, column=0, sticky='nwes', padx=10, pady=10)
 
+#Bring in the switch theme fuction
     def toggle_theme(self):
         toggle_theme(self)
-        
+
+#Function to make all the weather apps  
     def make_weather_label(self, text, row):
         label = tk.Label(self.weather_frame, text=text, bg='light grey')
         label.grid(row=row, column=0, sticky='w', pady=5)
         return label
-
+    
+#Function for all the fields that need to be refreshed
     def refresh_fields(self):
         self.drop_box.current(0)
         self.entry.delete(0, tk.END)
@@ -151,6 +154,7 @@ class WeatherDashboard(tk.Tk):
         self.weather_icon_label.config(image='')
         self.plot.clear()
 
+#For user input suggestions
     def update_suggestions(self, event):
         city = self.entry_var.get().lower()
 
@@ -182,6 +186,7 @@ class WeatherDashboard(tk.Tk):
         self.entry_var.set(selected_city)
         self.suggestion_listbox.grid_forget()  # Hide suggestions after selection
 
+#Fetch function for simple stats and history tracker
     def update_weather(self):
 
         # Update current weather in Simple Stats
@@ -220,13 +225,14 @@ class WeatherDashboard(tk.Tk):
 
 
             
-
+#Create the visualization
     def create_plot(self):
         self.figure = Figure(figsize=(8, 4), dpi=100)
         self.plot = self.figure.add_subplot(111)
         self.canvas = FigureCanvasTkAgg(self.figure, self.viz_frame)
         self.canvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)
 
+#Update teh visual
     def update_plot_data(self, weather_history: list):
         city = self.entry_var.get()
         self.plot.clear()

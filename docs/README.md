@@ -1,4 +1,4 @@
-# Capstone Assignment - Weather Dashboard
+# Capstone Assignment - Lets Find Some Weather
 ```Welcome to my first real app! This app is designed to allow user to retrieve not only current weather data, but also track historical weather patterns. Want to know what the last 7 days have looked like? How about in the last month? This easy to use interface simplifies searches.```
 
 

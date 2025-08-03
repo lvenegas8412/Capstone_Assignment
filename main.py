@@ -250,7 +250,7 @@ class WeatherDashboard(tk.Tk):
 
         
 
-
+#Run the GUI
 if __name__ == "__main__":
     app = WeatherDashboard()
     app.mainloop()
